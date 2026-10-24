@@ -18,7 +18,15 @@ export default function EnquiryForm() {
     const params = new URLSearchParams(window.location.search);
     params.forEach((value, key) => {
       const el = form.elements.namedItem(key);
-      if (el && "value" in el) (el as HTMLInputElement).value = value;
+      if (
+        el instanceof HTMLInputElement ||
+        el instanceof HTMLSelectElement ||
+        el instanceof HTMLTextAreaElement
+      ) {
+        el.value = value;
+      } else if (el instanceof RadioNodeList) {
+        el.value = value;
+      }
     });
   }, []);
 
