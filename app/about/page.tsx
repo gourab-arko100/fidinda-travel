@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { CtaBand, Eyebrow, FourFs, PageHero } from "@/components/Blocks";
+import { CtaBand, Eyebrow, PageHero } from "@/components/Blocks";
+import Maze from "@/components/Maze";
+import Icon from "@/components/Icons";
 import { divisions } from "@/lib/content";
 import Photo from "@/components/Photo";
 import { photos } from "@/lib/images";
@@ -9,6 +11,27 @@ export const metadata: Metadata = {
   description:
     "Fidinda Travel Solutions is the travel services division of Fidinda Solutions, a Cambodia-based service company in Phnom Penh.",
 };
+
+const vmItems = [
+  {
+    label: "Our purpose",
+    title: "Why we exist",
+    icon: "compass",
+    text: "To make travel preparation less complicated and help clients make informed choices about routes, schedules, destinations, budgets and travel arrangements.",
+  },
+  {
+    label: "Our vision",
+    title: "Where we’re heading",
+    icon: "eye",
+    text: "To become a trusted Cambodia-based travel solutions provider recognised for clear guidance, dependable coordination and personalised travel experiences.",
+  },
+  {
+    label: "Our mission",
+    title: "How we get there",
+    icon: "target",
+    text: "To help travellers plan and arrange suitable journeys through responsive service, transparent communication, careful attention to detail and a practical understanding of each traveller’s purpose, preferences and budget.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -53,68 +76,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="vision" className="section section-tint">
+      <section id="vision" className="section section-tint vm-section">
+        <Maze className="vm-maze" accent={false} />
         <div className="container">
+          <div className="section-head center">
+            <Eyebrow>Our direction</Eyebrow>
+            <h2>
+              Purpose, vision <span className="u-red">&amp; mission</span>
+            </h2>
+            <p className="lead">What we do, where we are heading, and how we help every traveller get there.</p>
+          </div>
+
           <div className="vm-grid">
-            <article className="vm-card" data-reveal>
-              <span className="vm-label">Our purpose</span>
-              <p>
-                To make travel preparation less complicated and help clients make informed choices about routes,
-                schedules, destinations, budgets and travel arrangements.
-              </p>
-            </article>
-            <article className="vm-card" data-reveal>
-              <span className="vm-label">Our vision</span>
-              <p>
-                To become a trusted Cambodia-based travel solutions provider recognised for clear guidance, dependable
-                coordination and personalised travel experiences.
-              </p>
-            </article>
-            <article className="vm-card" data-reveal>
-              <span className="vm-label">Our mission</span>
-              <p>
-                To help travellers plan and arrange suitable journeys through responsive service, transparent
-                communication, careful attention to detail and a practical understanding of each traveller&rsquo;s
-                purpose, preferences and budget.
-              </p>
-            </article>
+            <span className="vm-route" aria-hidden="true">
+              <span className="vm-route-plane">
+                <Icon name="plane" size={18} />
+              </span>
+            </span>
+            {vmItems.map((v, i) => (
+              <article
+                className={`vm-card${i === 1 ? " vm-card-featured" : ""}`}
+                key={v.label}
+                data-reveal
+                style={{ transitionDelay: `${i * 110}ms` }}
+              >
+                <span className="vm-ghost" aria-hidden="true">
+                  0{i + 1}
+                </span>
+                <span className="vm-icon">
+                  <Icon name={v.icon} size={28} />
+                </span>
+                <span className="vm-label">{v.label}</span>
+                <h3>{v.title}</h3>
+                <p>{v.text}</p>
+                <span className="vm-line" aria-hidden="true" />
+              </article>
+            ))}
           </div>
-        </div>
-      </section>
-
-      <section id="four-fs" className="section">
-        <div className="container">
-          <div className="section-head">
-            <Eyebrow no="02">Our service commitments</Eyebrow>
-            <h2>The Four Fs of Fidinda</h2>
-            <p className="lead">
-              Our services are guided by the four fundamental values represented in the Fidinda logo: Faith, Friendship,
-              Flexibility and Focus. These values define how we engage with our clients, understand their travel needs,
-              and deliver reliable, personalised travel solutions.
-            </p>
-          </div>
-          <FourFs detailed />
-        </div>
-      </section>
-
-      <section className="section section-navy promise-section">
-        <div className="container promise-wrap">
-          <Eyebrow light>Our brand promise</Eyebrow>
-          <h2>Four Fs. One Fidinda Commitment.</h2>
-          <ul className="promise-list">
-            <li>
-              <span>Faith</span> in our integrity.
-            </li>
-            <li>
-              <span>Friendship</span> in our relationships.
-            </li>
-            <li>
-              <span>Flexibility</span> in our solutions.
-            </li>
-            <li>
-              <span>Focus</span> on your journey.
-            </li>
-          </ul>
         </div>
       </section>
 

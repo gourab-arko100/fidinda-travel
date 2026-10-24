@@ -41,6 +41,25 @@ const paths: Record<string, ReactNode> = {
       <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
     </>
   ),
+  compass: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m15.5 8.5-2 5-5 2 2-5 5-2Z" />
+    </>
+  ),
+  eye: (
+    <>
+      <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.2" fill="currentColor" />
+    </>
+  ),
   calendar: (
     <>
       <rect x="3.5" y="5" width="17" height="15.5" rx="2" />

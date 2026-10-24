@@ -3,7 +3,7 @@ import Link from "next/link";
 import Maze from "./Maze";
 import Icon from "./Icons";
 import Photo from "./Photo";
-import { fourFs, steps, serviceStrip } from "@/lib/content";
+import { steps, serviceStrip } from "@/lib/content";
 import { photos } from "@/lib/images";
 
 export function Eyebrow({ no, children, light }: { no?: string; children: ReactNode; light?: boolean }) {
@@ -80,29 +80,6 @@ export function Notice({ label = "Important", children }: { label?: string; chil
       <p>
         <strong>{label}:</strong> {children}
       </p>
-    </div>
-  );
-}
-
-export function FourFs({ detailed = false }: { detailed?: boolean }) {
-  return (
-    <div className={`fours${detailed ? " fours-detailed" : ""}`}>
-      {fourFs.map((f, i) => (
-        <article className="f-card" key={f.word} data-reveal style={{ transitionDelay: `${i * 90}ms` }}>
-          <span className="f-ghost" aria-hidden="true">
-            {f.word.charAt(0)}
-          </span>
-          <div className="f-head">
-            <span className="f-letter" aria-hidden="true">
-              F
-            </span>
-            <span className="f-index">0{i + 1}</span>
-          </div>
-          <h3>{f.word}</h3>
-          <p className="f-sub">{f.title}</p>
-          {detailed && <p className="f-text">{f.text}</p>}
-        </article>
-      ))}
     </div>
   );
 }

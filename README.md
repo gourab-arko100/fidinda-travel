@@ -18,8 +18,8 @@ Production build: `npm run build && npm start`
 
 | Route           | Content |
 |-----------------|---------|
-| `/`             | Photo hero + trip planner, marquee, about collage, photo service cards, Four Fs, destination gallery, inbound/outbound, timeline, why Fidinda, photo CTA |
-| `/about`        | About, purpose, vision, mission, Four Fs (full), brand promise, approach, position in Fidinda Solutions |
+| `/`             | Photo hero + trip planner, marquee, about collage, photo service cards, destination gallery, inbound/outbound, timeline, why Fidinda, photo CTA |
+| `/about`        | About, purpose, vision, mission, approach, position in Fidinda Solutions |
 | `/services`     | Air ticketing, visa assistance, travel planning, attraction bookings, tour packages + 6-step process |
 | `/destinations` | Inbound Cambodia, outbound travel, who we serve, partner opportunities |
 | `/contact`      | Travel enquiry form, contact details, services at a glance, important service info |
@@ -35,7 +35,7 @@ Defined at the top of `app/globals.css`. Fonts: Montserrat (headings, matches th
 
 ## Editing content
 
-All text lives in **`lib/content.ts`** — services, Four Fs, steps, audiences, partner types, disclaimers.
+All text lives in **`lib/content.ts`** — services, steps, audiences, partner types, disclaimers.
 Edit there and every page updates.
 
 ## Enquiry form → Telegram

@@ -3,7 +3,7 @@ import Icon from "@/components/Icons";
 import Maze from "@/components/Maze";
 import Photo from "@/components/Photo";
 import TripPlanner from "@/components/TripPlanner";
-import { CtaBand, Eyebrow, FourFs, Marquee, Steps } from "@/components/Blocks";
+import { CtaBand, Eyebrow, Marquee, Steps } from "@/components/Blocks";
 import { services, inbound, outbound, whyFidinda, gallery } from "@/lib/content";
 import { photos } from "@/lib/images";
 
@@ -108,8 +108,8 @@ export default function HomePage() {
               <Photo id={photos.mapHands} alt="Traveller holding a map" sizes="(max-width: 960px) 50vw, 20vw" width={700} />
             </div>
             <div className="collage-badge">
-              <strong>4 Fs</strong>
-              <span>One Fidinda commitment</span>
+              <strong>PNH ⇄</strong>
+              <span>Inbound &amp; outbound travel</span>
             </div>
             <Maze className="collage-maze" />
           </div>
@@ -208,33 +208,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= FOUR Fs ================= */}
-      <section className="section section-navy fours-section">
-        <Maze className="fours-maze" accent={false} />
-        <div className="container">
-          <div className="section-head center">
-            <Eyebrow no="03" light>
-              The Four Fs of Fidinda
-            </Eyebrow>
-            <h2>
-              Four Fs. <span className="u-red">One Fidinda commitment.</span>
-            </h2>
-            <p className="lead">Our services are guided by the four fundamental values represented in the Fidinda logo.</p>
-          </div>
-          <FourFs />
-          <p className="promise-line">
-            <span>Faith</span> in our integrity · <span>Friendship</span> in our relationships · <span>Flexibility</span> in
-            our solutions · <span>Focus</span> on your journey
-          </p>
-        </div>
-      </section>
-
       {/* ================= DESTINATIONS ================= */}
       <section className="section">
         <div className="container">
           <div className="section-head section-head-row">
             <div>
-              <Eyebrow no="04">Destinations</Eyebrow>
+              <Eyebrow no="03">Destinations</Eyebrow>
               <h2>Into Cambodia, or out to the world</h2>
             </div>
             <p className="head-note">Ideas to inspire your plan — every itinerary is shaped around your interests, pace and budget.</p>
@@ -291,7 +270,7 @@ export default function HomePage() {
       <section className="section section-tint">
         <div className="container">
           <div className="section-head center">
-            <Eyebrow no="05">Customer journey</Eyebrow>
+            <Eyebrow no="04">Customer journey</Eyebrow>
             <h2>How our service works</h2>
             <p className="lead">
               Planning before booking, practical advice before commitment, and timely communication as arrangements
@@ -316,7 +295,7 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <Eyebrow no="06">Why Fidinda</Eyebrow>
+            <Eyebrow no="05">Why Fidinda</Eyebrow>
             <h2>Practical guidance, personal attention</h2>
             <ul className="why-list">
               {whyFidinda.map((w, i) => (

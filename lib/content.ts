@@ -87,7 +87,6 @@ export const footerColumns = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Vision & Mission", href: "/about#vision" },
-      { label: "The Four Fs", href: "/about#four-fs" },
       { label: "Our Approach", href: "/about#approach" },
       { label: "Fidinda Solutions Group", href: "/about#group" },
       { label: "Partnerships", href: "/destinations#partners" },
@@ -207,41 +206,6 @@ export const services: Service[] = [
       "The final components, inclusions, exclusions and service conditions are confirmed in the individual quotation or booking information.",
     icon: "suitcase",
     image: photos.flatLay,
-  },
-];
-
-export const fourFs = [
-  {
-    letter: "F",
-    word: "Faith",
-    title: "Building Trust Through Transparency",
-    text:
-      "We believe trust is the foundation of every successful journey. We are committed to providing honest guidance, transparent pricing, clear booking conditions, and accurate information about travel documentation and visa requirements, enabling travellers to make informed decisions with confidence.",
-    promise: "Faith in Our Integrity.",
-  },
-  {
-    letter: "F",
-    word: "Friendship",
-    title: "Building Lasting Relationships",
-    text:
-      "We treat our travellers as valued partners rather than one-time customers. Through friendly communication, personalised attention, and genuine care, we aim to build lasting relationships while supporting families, first-time travellers, business travellers, and individuals requiring additional assistance.",
-    promise: "Friendship in Our Relationships.",
-  },
-  {
-    letter: "F",
-    word: "Flexibility",
-    title: "Travel Solutions That Adapt to You",
-    text:
-      "Every traveller has unique preferences, expectations, schedules, and budgets. We offer flexible travel planning and explore suitable options for flights, accommodation, itineraries, attractions, and tour packages, adapting our recommendations to individual needs and changing circumstances, subject to availability.",
-    promise: "Flexibility in Our Solutions.",
-  },
-  {
-    letter: "F",
-    word: "Focus",
-    title: "Your Journey, Our Priority",
-    text:
-      "We remain focused on understanding each traveller's objectives and coordinating the essential elements of their journey. From ticketing and visa assistance to travel planning, attraction bookings, and tour arrangements, we strive for accuracy, efficiency, timely communication, and attention to detail throughout the process.",
-    promise: "Focus on Your Journey.",
   },
 ];
 
