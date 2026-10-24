@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/content";
 import Icon from "./Icons";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -54,14 +55,17 @@ export default function Header() {
           </Link>
         </nav>
 
-        <button
+        <div className="header-actions">
+          <ThemeToggle />
+          <button
           className="menu-toggle"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
           <Icon name={open ? "close" : "menu"} size={26} />
-        </button>
+          </button>
+        </div>
       </div>
     </header>
   );

@@ -79,6 +79,13 @@ Photos are free Unsplash images, listed by ID in **`lib/images.ts`** and loaded 
 (`images.unsplash.com` is allowed in `next.config.mjs`). To use your own photos, drop them in `/public`
 and swap the IDs/paths there. An internet connection is needed for the photos to load in development.
 
+## Light & dark theme
+
+A sun/moon button in the header switches themes. By default the site follows the visitor's device setting;
+once they choose, the choice is remembered. Theme colours are CSS variables at the top of `app/globals.css`
+(light in `:root`, dark in `:root[data-theme="dark"]`). `components/ThemeToggle.tsx` contains the toggle and the
+small script that applies the theme before the page paints (so there's no flash).
+
 ## Motion
 
 - Hero photo slowly zooms (Ken Burns), plane flies along a dashed route, boarding pass floats
