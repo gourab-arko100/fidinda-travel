@@ -2164,17 +2164,7 @@ p {
 }
 .divisions li {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
   margin-top: 12px;
-  padding: 15px 18px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--ink);
 }
 .divisions li::before {
   content: "";
@@ -2185,9 +2175,43 @@ p {
   height: 2px;
   background: var(--soft-2);
 }
-.divisions li.is-current {
+.division {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 20px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--card);
+  text-decoration: none;
+}
+.division.is-current {
   border-color: var(--red);
   background: var(--red-soft);
+}
+.division.is-link {
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.3s var(--ease), box-shadow 0.3s, color 0.25s;
+}
+.division.is-link svg {
+  color: var(--muted);
+  flex: none;
+  transition: color 0.25s, transform 0.3s var(--ease);
+}
+.division.is-link:hover,
+.division.is-link:focus-visible {
+  border-color: var(--ink);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+.division.is-link:hover svg,
+.division.is-link:focus-visible svg {
+  color: var(--red);
+  transform: translate(2px, -2px);
 }
 
 /* ==========================================================
@@ -3524,4 +3548,9 @@ p {
 }
 :root[data-theme="dark"] .vm-maze {
   opacity: 0.35;
+}
+
+/* division button whose link hasn't been added yet */
+.division.is-pending {
+  cursor: default;
 }

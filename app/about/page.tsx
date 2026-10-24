@@ -156,9 +156,29 @@ export default function AboutPage() {
             <div className="divisions-root">Fidinda Solutions</div>
             <ul>
               {divisions.map((d) => (
-                <li key={d.name} className={d.current ? "is-current" : undefined}>
-                  {d.name}
-                  {d.current && <span className="tag tag-red">You are here</span>}
+                <li key={d.name}>
+                  {d.current ? (
+                    <span className="division is-current" aria-current="page">
+                      {d.name}
+                      <span className="tag tag-red">You are here</span>
+                    </span>
+                  ) : d.url ? (
+                    <a
+                      className="division is-link"
+                      href={d.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit the ${d.name} website (opens in a new tab)`}
+                    >
+                      {d.name}
+                      <Icon name="external" size={17} />
+                    </a>
+                  ) : (
+                    <a className="division is-link is-pending" aria-disabled="true" title="Website coming soon">
+                      {d.name}
+                      <Icon name="external" size={17} />
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

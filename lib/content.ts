@@ -314,11 +314,13 @@ export const whyFidinda = [
   },
 ];
 
-export const divisions = [
-  { name: "Fidinda Financial Solutions", current: false },
-  { name: "Fidinda Management Solutions", current: false },
-  { name: "Fidinda Health Solutions", current: false },
-  { name: "Fidinda Travel Solutions", current: true },
+// Sister division websites — paste each site's link into `url`.
+// A button with an empty url is shown but does nothing until a link is added.
+export const divisions: { name: string; url: string; current?: boolean }[] = [
+  { name: "Fidinda Financial Solutions", url: "" }, // ← add Financial link here
+  { name: "Fidinda Management Solutions", url: "" }, // ← add Management link here
+  { name: "Fidinda Health Solutions", url: "https://fidinda-health.vercel.app" },
+  { name: "Fidinda Travel Solutions", url: "https://fidinda-travel.vercel.app", current: true },
 ];
 
 export const servicesAtAGlance = [
