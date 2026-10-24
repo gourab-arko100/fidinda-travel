@@ -97,7 +97,6 @@ export const footerColumns = [
 ];
 
 export const nav = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/destinations", label: "Destinations" },
